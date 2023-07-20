@@ -10,7 +10,17 @@ Antes de comenzar, asegúrate de tener instalados los siguientes requisitos:
 - Git
 - PHP 
 - Composer: Si no tienes instalado Composer, sigue las instrucciones de instalación desde su sitio oficial [aquí](https://getcomposer.org/download/).
-- MySQL: A través de XAMPP 
+- XAMPP
+  
+## Instalación de XAMPP
+
+XAMPP es una distribución de Apache, MySQL, PHP y Perl que facilita la configuración de un entorno de desarrollo local para aplicaciones web.
+
+1. Descarga XAMPP desde el sitio oficial: [https://www.apachefriends.org/index.html](https://www.apachefriends.org/index.html).
+
+2. Ejecuta el instalador descargado y sigue las instrucciones del asistente de instalación para instalar XAMPP en tu sistema.
+
+3. Durante la instalación, selecciona los componentes que deseas instalar. Asegúrate de seleccionar al menos los módulos "Apache" y  "MySQL" para poder utilizar una base de datos MySQL con tu aplicación Symfony.
 
 ## Clonar el repositorio
 
@@ -30,6 +40,12 @@ composer install
 Edita el archivo `.env` y actualiza los valores de las variables de entorno según tus configuraciones.
 
 ## Creación de la base de datos
+
+1. Abre XAMPP Control Panel desde el menú de inicio o la ubicación donde se instaló XAMPP.
+
+2. Haz clic en el botón "Start" junto al módulo "MySQL" para iniciar el servidor de base de datos.
+
+3. Abre un navegador web y visita [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/).
 
 El proyecto utiliza una base de datos, es necesario crear la base de datos y ejecutar las migraciones:
 
@@ -53,6 +69,10 @@ Caducidad: string($date-time)
 }
 
 ## Ejecución del servidor local
+
+1. Abre XAMPP Control Panel desde el menú de inicio o la ubicación donde se instaló XAMPP.
+
+2. Haz clic en el botón "Start" junto al módulo "Apache" para iniciar el servidor web.
 
 Para ejecutar el servidor local de Symfony y ver el proyecto en tu navegador, utiliza el siguiente comando:
 
