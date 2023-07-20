@@ -21,6 +21,7 @@ class PublicacionType extends AbstractType
             ->add('Provincia')
             ->add('Claves')
             ->add('Tiempo')
+            ->add('Fecha')
             ->add('Caducidad')
         ;
     }

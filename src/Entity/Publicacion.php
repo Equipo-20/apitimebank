@@ -54,6 +54,10 @@ class Publicacion
     private ?int $Tiempo = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[SerializedName("fecha")] // Especifica el nombre para el campo "Fecha" en el JSON
+    private ?\DateTimeInterface $Fecha = null;
+
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
     #[SerializedName("caducidad")] // Especifica el nombre para el campo "Caducidad" en el JSON
     private ?\DateTimeInterface $Caducidad = null;
 
@@ -166,6 +170,18 @@ class Publicacion
     public function setTiempo(int $Tiempo): static
     {
         $this->Tiempo = $Tiempo;
+
+        return $this;
+    }
+
+    public function getFecha(): ?\DateTimeInterface
+    {
+        return $this->Fecha;
+    }
+
+    public function setFecha(\DateTimeInterface $Fecha): static
+    {
+        $this->Fecha = $Fecha;
 
         return $this;
     }
