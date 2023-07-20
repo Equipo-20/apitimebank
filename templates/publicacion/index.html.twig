@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Publicacion index{% endblock %}
+
+{% block body %}
+    <h1>Publicacion index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tipo</th>
+                <th>Categoria</th>
+                <th>Titulo</th>
+                <th>Contenido</th>
+                <th>Usuario</th>
+                <th>Localidad</th>
+                <th>Provincia</th>
+                <th>Claves</th>
+                <th>Tiempo</th>
+                <th>Caducidad</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for publicacion in publicacions %}
+            <tr>
+                <td>{{ publicacion.id }}</td>
+                <td>{{ publicacion.Tipo }}</td>
+                <td>{{ publicacion.Categoria }}</td>
+                <td>{{ publicacion.Titulo }}</td>
+                <td>{{ publicacion.Contenido }}</td>
+                <td>{{ publicacion.Usuario }}</td>
+                <td>{{ publicacion.Localidad }}</td>
+                <td>{{ publicacion.Provincia }}</td>
+                <td>{{ publicacion.Claves ? publicacion.Claves|join(', ') : '' }}</td>
+                <td>{{ publicacion.Tiempo }}</td>
+                <td>{{ publicacion.Caducidad ? publicacion.Caducidad|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_publicacion_show', {'id': publicacion.id}) }}">show</a>
+                    <a href="{{ path('app_publicacion_edit', {'id': publicacion.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_publicacion_new') }}">Create new</a>
+{% endblock %}

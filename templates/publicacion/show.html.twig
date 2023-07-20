@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Publicacion{% endblock %}
+
+{% block body %}
+    <h1>Publicacion</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ publicacion.id }}</td>
+            </tr>
+            <tr>
+                <th>Tipo</th>
+                <td>{{ publicacion.Tipo }}</td>
+            </tr>
+            <tr>
+                <th>Categoria</th>
+                <td>{{ publicacion.Categoria }}</td>
+            </tr>
+            <tr>
+                <th>Titulo</th>
+                <td>{{ publicacion.Titulo }}</td>
+            </tr>
+            <tr>
+                <th>Contenido</th>
+                <td>{{ publicacion.Contenido }}</td>
+            </tr>
+            <tr>
+                <th>Usuario</th>
+                <td>{{ publicacion.Usuario }}</td>
+            </tr>
+            <tr>
+                <th>Localidad</th>
+                <td>{{ publicacion.Localidad }}</td>
+            </tr>
+            <tr>
+                <th>Provincia</th>
+                <td>{{ publicacion.Provincia }}</td>
+            </tr>
+            <tr>
+                <th>Claves</th>
+                <td>{{ publicacion.Claves ? publicacion.Claves|join(', ') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Tiempo</th>
+                <td>{{ publicacion.Tiempo }}</td>
+            </tr>
+            <tr>
+                <th>Caducidad</th>
+                <td>{{ publicacion.Caducidad ? publicacion.Caducidad|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_publicacion_index') }}">back to list</a>
+
+    <a href="{{ path('app_publicacion_edit', {'id': publicacion.id}) }}">edit</a>
+
+    {{ include('publicacion/_delete_form.html.twig') }}
+{% endblock %}
