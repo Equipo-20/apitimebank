@@ -9,7 +9,7 @@ Antes de comenzar, asegúrate de tener instalados los siguientes requisitos:
 
 - Git
 - PHP 
-- Composer: [Instrucciones para instalar Composer si es necesario].
+- Composer: Si no tienes instalado Composer, sigue las instrucciones de instalación desde su sitio oficial [aquí](https://getcomposer.org/download/).
 - MySQL: A través de XAMPP 
 
 ## Clonar el repositorio
