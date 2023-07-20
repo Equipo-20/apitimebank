@@ -6,6 +6,7 @@ use ApiPlatform\Metadata\ApiResource;
 use App\Repository\PublicacionRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\SerializedName; 
 
 #[ORM\Entity(repositoryClass: PublicacionRepository::class)]
 #[ApiResource]
@@ -17,33 +18,43 @@ class Publicacion
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[SerializedName("tipo")] // Especifica el nombre para el campo "Tipo" en el JSON
     private ?string $Tipo = null;
 
     #[ORM\Column(length: 255)]
+    #[SerializedName("categoria")] // Especifica el nombre para el campo "Categoria" en el JSON
     private ?string $Categoria = null;
 
     #[ORM\Column(length: 255)]
+    #[SerializedName("titulo")] // Especifica el nombre para el campo "Titulo" en el JSON
     private ?string $Titulo = null;
 
     #[ORM\Column(length: 1024)]
+    #[SerializedName("contenido")] // Especifica el nombre para el campo "Contenido" en el JSON
     private ?string $Contenido = null;
 
     #[ORM\Column(length: 255)]
+    #[SerializedName("usuario")] // Especifica el nombre para el campo "Usuario" en el JSON
     private ?string $Usuario = null;
 
     #[ORM\Column(length: 255)]
+    #[SerializedName("localidad")] // Especifica el nombre para el campo "Localidad" en el JSON
     private ?string $Localidad = null;
 
     #[ORM\Column(length: 255)]
+    #[SerializedName("provincia")] // Especifica el nombre para el campo "Provincia" en el JSON
     private ?string $Provincia = null;
 
     #[ORM\Column(type: Types::ARRAY, nullable: true)]
+    #[SerializedName("claves")] // Especifica el nombre para el campo "Claves" en el JSON
     private ?array $Claves = null;
 
     #[ORM\Column]
+    #[SerializedName("tiempo")] // Especifica el nombre para el campo "Tiempo" en el JSON
     private ?int $Tiempo = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[SerializedName("caducidad")] // Especifica el nombre para el campo "Caducidad" en el JSON
     private ?\DateTimeInterface $Caducidad = null;
 
     public function getId(): ?int
