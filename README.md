@@ -8,7 +8,8 @@ sobre una base de datos apitimebanks y la tabla publications.
 Antes de comenzar, asegúrate de tener instalados los siguientes requisitos:
 
 - Git
-- PHP 
+- PHP
+- Symfony CLI: https://symfony.com/download
 - Composer: Si no tienes instalado Composer, sigue las instrucciones de instalación desde su sitio oficial [aquí](https://getcomposer.org/download/).
 - XAMPP
   
