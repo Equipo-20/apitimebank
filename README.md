@@ -18,14 +18,12 @@ Para obtener una copia de este proyecto en tu máquina local, ejecuta el siguien
 
 git clone https://github.com/Equipo-20/apitimebank.git
 
-
 ## Instalación de dependencias
 
 Después de clonar el repositorio, navega al directorio del proyecto e instala las dependencias utilizando Composer:
 
 cd apitimebank
 composer install
-
 
 ## Configuración del entorno
 
@@ -37,6 +35,22 @@ El proyecto utiliza una base de datos, es necesario crear la base de datos y eje
 
 php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
+
+Esta API utiliza la base de datos "apibanktime" y la tabla "publicacion" con la siguiente estructura:
+
+Publicacion {
+id: integer (readOnly: true)
+Tipo: string
+Categoria: string
+Titulo: string
+Contenido: string
+Usuario: string
+Localidad: string
+Provincia: string
+Claves: [nullable: true, string]
+Tiempo: integer
+Caducidad: string($date-time)
+}
 
 ## Ejecución del servidor local
 
