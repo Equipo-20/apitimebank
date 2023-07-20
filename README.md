@@ -23,20 +23,17 @@ git clone https://github.com/Equipo-20/apitimebank.git
 
 Después de clonar el repositorio, navega al directorio del proyecto e instala las dependencias utilizando Composer:
 
-cd tuproyecto
+cd apitimebank
 composer install
 
 
 ## Configuración del entorno
 
-Antes de ejecutar el proyecto, asegúrate de configurar el entorno copiando el archivo `.env.example` a `.env` y proporcionando los valores adecuados para tu entorno:
-
-
 Edita el archivo `.env` y actualiza los valores de las variables de entorno según tus configuraciones.
 
 ## Creación de la base de datos
 
-Si el proyecto utiliza una base de datos, crea la base de datos y ejecuta las migraciones:
+El proyecto utiliza una base de datos, es necesario crear la base de datos y ejecutar las migraciones:
 
 php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
@@ -45,7 +42,7 @@ php bin/console doctrine:migrations:migrate
 
 Para ejecutar el servidor local de Symfony y ver el proyecto en tu navegador, utiliza el siguiente comando:
 
-symfony server:start
+symfony server:start -d
 
 ## Acceso a la API
 
